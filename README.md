@@ -30,9 +30,9 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 - [ ] 8. Simple shell 0.4
 - [ ] 11. Simple shell 1.0
 - [ ] 22. What happens when you type ls -l in the shell
-#Here is a clear idea about our methodolgy through this project:
+# Here is a clear idea about our methodolgy through this project:
 ![flowchart](https://github.com/nourouhichi/simple_shell/blob/master/Untitled%20Diagram.png)
-#Authors
+# Authors
 * Nour Ouhichi
 * Nour Taktak
 
