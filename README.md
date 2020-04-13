@@ -2,7 +2,6 @@
 # Simple shell
 > Writing a simple UNIX command interpreter.
 ## Learning Objectives
-
    * Who designed and implemented the original Unix operating system
    *  Who wrote the first version of the UNIX shell
    * Who invented the B programming language (the direct predecessor to the C programming language)
@@ -19,15 +18,21 @@
    * What is EOF / “end-of-file”?
 ## Compilation
 > The shell will be compiled this way:
-``` 
+```
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
 ## Checklist
-- [ ] 0. README, man, AUTHORS 
+- [ ] 0. README, man, AUTHORS
 - [ ] 1. Betty would be proud
 - [ ] 3. Simple shell 0.1
 - [ ] 5. Simple shell 0.2
 - [ ] 7. Simple shell 0.3
-- [ ] 8. Simple shell 0.4 
-- [ ] 11. Simple shell 1.0 
+- [ ] 8. Simple shell 0.4
+- [ ] 11. Simple shell 1.0
 - [ ] 22. What happens when you type ls -l in the shell
+# Here is a clear idea about our methodolgy through this project:
+![flowchart](https://github.com/nourouhichi/simple_shell/blob/master/Untitled%20Diagram.png)
+# Authors
+* Nour Ouhichi
+* Nour Taktak
+
