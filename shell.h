@@ -12,9 +12,9 @@
 #include <errno.h>
 extern char **environ;
 char **parse(char *line);
-char *prompt();
-int execute(char **array, char *str);
-int  main(void);
+char *prompt(int argc, char **argv);
+int execute(char **av, char **array, char *str, int num);
+int  main(int argc, char **argv);
 int is_env(char **array, char *str);
 void Ctrlc(int x);
 char *path(char **array);
@@ -25,5 +25,8 @@ int _strcmp(char *s1, char *s2);
 char *_strdup(char *str);
 char *_strcpy(char *dest, const char *src);
 int _strncmp(const char *s, const char *t, size_t num);
+void nfound(char **av, int num, char *cmd);
+int _putchar(char c);
+void _itoa(int num);
 #endif
 

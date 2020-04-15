@@ -37,7 +37,7 @@ int is_env(char **array, char *line)
  * @line:input line
  * Return:int
 */
-int execute(char **array, char *line)
+int execute(char **av, char **array, char *line, int num)
 {
 	pid_t child;
 	int status, ar, ret;
@@ -53,7 +53,7 @@ int execute(char **array, char *line)
 		child = fork();
 		if (child == -1)
 		{
-			perror("fork failed");
+			perror("fork failed: ");
 			if (test != NULL)
 				free(array[0]);
 			free(array);
@@ -66,7 +66,7 @@ int execute(char **array, char *line)
 			{
 				if (test != NULL)
 					free(array[0]);
-				perror(array[0]);
+				nfound(av, num , array[0]);
 				free(array);
 				free(line);
 				exit(2);
@@ -80,3 +80,27 @@ int execute(char **array, char *line)
 	}
 	return (0);
 }
+/**
+ */
+void nfound(char **av, int num, char *cmd)
+{
+
+	write(STDERR_FILENO, av[0], _strlen(av[0]));
+        write(STDERR_FILENO, ": ", 2);
+	_itoa(num);
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, cmd, strlen(cmd));
+	write(STDERR_FILENO, ": not found\n", 12);
+}
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(STDERR_FILENO, &c, 1));
+}
+
