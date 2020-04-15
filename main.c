@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 			free(array);
 		}
 	}
-	exit(0);
+	exit(2);
 	return (0);
 }
 
