@@ -9,13 +9,13 @@ int is_env(char **array, char *line)
 {
 	int i;
 
-	if (_strcmp(array[0], "exit") == 0)
+	if ((_strcmp(array[0], "exit") == 0) && (array[1] == NULL))
 	{
 		free(line);
 		free(array);
 		exit(0);
 	}
-	if ((_strcmp(array[0], "env") == 0))
+	if ((_strcmp(array[0], "env") == 0) && (array[1] == NULL))
 	{
 		i = 0;
 		while (environ[i])
@@ -68,7 +68,7 @@ int execute(char **av, char **array, char *line, int num)
 				nfound(av, num , array[0]);
 				free(array);
 				free(line);
-				exit(126);
+				exit(127);
 				return (1);
 			}
 		}

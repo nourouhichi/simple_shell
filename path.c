@@ -25,7 +25,7 @@ char *path(char **array)
 		_path = malloc(sizeof(char) * x + 2);
 		if (!_path)
 		{
-			write(STDIN_FILENO, "Error assign memory\n", 50);
+			write(STDOUT_FILENO, "Error assign memory\n", 50);
 			free(_path);
 			free(path);
 			return (NULL);
