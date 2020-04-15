@@ -33,10 +33,10 @@ char *prompt()
 	getinput = getline(&input, &size, stdin);
 	if (getinput == -1)
 	{
-		write(STDOUT_FILENO, "\n", 1);
+		write(STDIN_FILENO, "\n", 1);
 		free(input);
 		exit(0);
-	}
+		}
 	input[getinput - 1] = '\0';
 	if ((_strcmp(input, "\0") == 0) || (stroc(input, ' ') == _strlen(input)))
 	{
