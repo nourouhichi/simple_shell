@@ -13,7 +13,7 @@ int is_env(char **array, char *line)
 	{
 		free(line);
 		free(array);
-		exit(2);
+		exit(0);
 	}
 	if ((_strcmp(array[0], "env") == 0))
 	{
@@ -53,7 +53,6 @@ int execute(char **av, char **array, char *line, int num)
 		child = fork();
 		if (child == -1)
 		{
-			perror("fork failed: ");
 			if (test != NULL)
 				free(array[0]);
 			free(array);
@@ -69,7 +68,7 @@ int execute(char **av, char **array, char *line, int num)
 				nfound(av, num , array[0]);
 				free(array);
 				free(line);
-				exit(2);
+				exit(126);
 				return (1);
 			}
 		}
