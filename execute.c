@@ -69,7 +69,7 @@ int execute(char **array, char *line)
 				perror(array[0]);
 				free(array);
 				free(line);
-				exit(0);
+				exit(2);
 				return (1);
 			}
 		}

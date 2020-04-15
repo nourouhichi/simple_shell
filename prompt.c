@@ -29,7 +29,7 @@ char *prompt()
 
 	input = NULL;
 	if(isatty(STDIN_FILENO) == 1)
-	  write(STDOUT_FILENO, "$ ", 2);		/*display message to the user*/
+	  write(STDIN_FILENO, "$ ", 2);		/*display message to the user*/
 	getinput = getline(&input, &size, stdin);
 	if (getinput == -1)
 	{
