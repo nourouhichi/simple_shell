@@ -23,15 +23,16 @@ char **parse(char *line)
 	{
 		free(array);
 		free(line);
+		perror(token);
 		return (NULL);
 	}
-	if (token != NULL)
+	while (token != NULL)
 	{
 		array[i] = token;
 		token = strtok(NULL, " \t\a\r\n");
 		i++;
 	}
-	array[i] = token;
+	/*array[i] = token;*/
 	i++;
 	array[i] = NULL;
 	return (array);
