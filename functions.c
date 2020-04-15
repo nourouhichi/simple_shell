@@ -36,15 +36,17 @@ i++;
 return (s1[i] - s2[i]);
 }
 /**
+ *_itoa - converts an int into a string
+ *@num:the integer
  */
 void _itoa(int num)
 {
-if (num /10 != 0)
+if (num / 10 != 0)
 {
-_itoa(num/10);
+_itoa(num / 10);
 _putchar((num % 10) + '0');
 }
-else if((num / 10 == 0) && (num % 10 != 0))
+else if ((num / 10 == 0) && (num % 10 != 0))
 _putchar((num % 10) + '0');
 }
 

@@ -35,6 +35,8 @@ int is_env(char **array, char *line)
  * execute - executes the command with the argument
  * @array:input array
  * @line:input line
+ * @av:argv
+ * @num:number of times the shell was used
  * Return:int
 */
 int execute(char **av, char **array, char *line, int num)
@@ -65,7 +67,7 @@ int execute(char **av, char **array, char *line, int num)
 			{
 				if (test != NULL)
 					free(array[0]);
-				nfound(av, num , array[0]);
+				nfound(av, num, array[0]);
 				free(array);
 				free(line);
 				exit(127);
@@ -80,12 +82,16 @@ int execute(char **av, char **array, char *line, int num)
 	return (0);
 }
 /**
+ * nfound - display not found message
+ * @av:argv
+ * @num:number of times the shell was used
+ * @cmd:array[0]
  */
 void nfound(char **av, int num, char *cmd)
 {
 
 	write(STDERR_FILENO, av[0], _strlen(av[0]));
-        write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, ": ", 2);
 	_itoa(num);
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, cmd, strlen(cmd));

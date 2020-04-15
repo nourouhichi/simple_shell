@@ -19,6 +19,8 @@ unsigned int stroc(char *input, char c)
 }
 /**
  * prompt - displays the shell and gets the user input
+ * @ac:argc
+ * @av:argv
  * Return: returns user input
  */
 char *prompt(int ac, char **av)
@@ -28,8 +30,8 @@ char *prompt(int ac, char **av)
 	ssize_t getinput;
 
 	input = NULL;
-	if(isatty(STDIN_FILENO) == 1)
-	  write(STDIN_FILENO, "$ ", 2);		/*display message to the user*/
+	if (isatty(STDIN_FILENO) == 1)
+		write(STDIN_FILENO, "$ ", 2);		/*display message to the user*/
 	getinput = getline(&input, &size, stdin);
 	if (getinput == -1)
 	{

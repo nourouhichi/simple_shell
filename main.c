@@ -1,6 +1,8 @@
 #include "shell.h"
 /**
 *main - the shell
+*@argc:argc
+*@argv:argv
 *Return:int
 */
 
@@ -30,7 +32,7 @@ int main(int argc, char **argv)
 			free(array);
 		}
 	}
-	exit(2);
+	exit(0);
 	return (0);
 }
 
