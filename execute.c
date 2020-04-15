@@ -13,7 +13,7 @@ int is_env(char **array, char *line)
 	{
 		free(line);
 		free(array);
-		exit(0);
+		exit(2);
 	}
 	if ((_strcmp(array[0], "env") == 0))
 	{

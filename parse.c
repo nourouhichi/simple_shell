@@ -10,7 +10,7 @@ char **parse(char *line)
 	char *token;
 	int i = 0;
 
-	array = malloc(sizeof(char *) * 3 + 2);
+	array = malloc(sizeof(char *) * 1024);
 	if (array == NULL)
 	{
 		perror(*array);
