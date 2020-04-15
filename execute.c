@@ -92,7 +92,7 @@ void nfound(char **av, int num, char *cmd)
 
 	write(STDERR_FILENO, av[0], _strlen(av[0]));
 	write(STDERR_FILENO, ": ", 2);
-	_itoa(num);
+	_itoa(num);/*print the int*/
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, cmd, strlen(cmd));
 	write(STDERR_FILENO, ": not found\n", 12);
