@@ -32,8 +32,6 @@ char **parse(char *line)
 		token = strtok(NULL, " \t\a\r\n");
 		i++;
 	}
-	/*array[i] = token;*/
-	i++;
 	array[i] = NULL;
 	return (array);
 	}
